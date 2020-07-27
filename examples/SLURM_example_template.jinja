@@ -1,0 +1,26 @@
+#!/bin/bash
+# SPECIFY JOB SUBMISSION PARAMETERS
+
+#SBATCH --job-name={{job_name}}
+#SBATCH --ntasks=1
+#SBATCH --mem={{job_memory}}
+#SBATCH --time={{job_walltime}}
+
+# SPECIFY LOGGING BEHAVIOR
+
+# FOR THINGS LIKE 'module load ...' OR 'conda activate ...'
+{{ setup }}
+
+echo "`date` Starting"
+
+{{ command }} \
+{{ argument_1 }} \
+{{ argument_2 }} \
+{{ argument_3 }} \
+{{ argument_4 }} \
+{{ argument_5 }} \
+{{ argument_6 }} \
+{{ argument_7 }} \
+{{ argument_8 }}
+
+echo "`date` Exiting"
